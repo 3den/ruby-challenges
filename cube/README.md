@@ -14,7 +14,7 @@ For the 1st example (see below), a sample solution would be down, right, right,
 
 ### Input
 The input  will contain multiple test cases. Each test case will consist of an m x n
-grid of characters, where m and n are each between 2 and 20. Within each test case, empty spaces will be described by `.', painted squares by `P', illegal squares by `#', the initial position of the cube by `C', and the goal square by `G'. There will always be exactly 6 `P's, exactly one `C', exactly one `G',and no more than 12 `.'s. Input test cases will be separated by a single blank line. The input will be terminated by the end of file.
+grid of characters, where m and n are each between 2 and 20. Within each test case, empty spaces will be described by '.', painted squares by 'P', illegal squares by '#', the initial position of the cube by 'C', and the goal square by 'G'. There will always be exactly 6 'P's, exactly one 'C', exactly one 'G',and no more than 12 '.'s. Input test cases will be separated by a single blank line. The input will be terminated by the end of file.
 
 ### Output
 For each input test case, print the minimum number of moves required to obtain the goal state. If it is not possible to achieve this state, print -1
