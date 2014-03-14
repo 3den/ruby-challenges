@@ -20,23 +20,26 @@ grid of characters, where m and n are each between 2 and 20. Within each test ca
 For each input test case, print the minimum number of moves required to obtain the goal state. If it is not possible to achieve this state, print -1
 
 ### Sample Input
-C.PPP
+C.PPP<br>
 PPPG.
 
-C....
-G##.P
-.##PP
+C....<br>
+G##.P<br>
+.##PP<br>
 ..PPP
 
-PPP
-PCP
+PPP<br>
+PCP<br>
 PG.
 
-.PPPCPPP..
+.PPPCPPP..<br>
 ....G....
 
 ### Sample Output
 10
+
 23
+
 15
+
 21
