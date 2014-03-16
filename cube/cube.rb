@@ -1,4 +1,33 @@
 class Cube
+  attr_reader :front, :back
+
+  def initialize
+
+  end
+
+  def paint_bottom
+    @bottom = true
+  end
+
+  def rotate_left
+    aux = bottom
+
+  end
+
+  class Side < Struct.new(:top, :bottom, :left, :right)
+    attr_accessor :color
+
+    def top=(side)
+      super(side)
+      side.bottom = self
+      side.left = self.left
+      side.right = self.right
+    end
+
+  end
+end
+
+class Board
   InvalidInput = Class.new
   attr_reader :input, :cube
 
@@ -25,16 +54,4 @@ class Cube
     input.first.size < 21
   end
 
-end
-
-class ColorCube
-  attr_reader :position, :cube
-
-  def initilize
-    @cube = [[false, false],[false, false, false, false]]
-  end
-
-  def move(direction)
-
-  end
 end
