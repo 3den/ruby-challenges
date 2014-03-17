@@ -1,7 +1,7 @@
 class MathTree < Struct.new(:min, :max)
 
   def solve(problem)
-    find_result problem, min.to_f, max.to_f
+    solve_loop problem, min.to_f, max.to_f
   end
 
   def apply(problem, value)
@@ -10,21 +10,36 @@ class MathTree < Struct.new(:min, :max)
 
   private
 
-  def find_result(problem, min, max)
+  def solve_recursion(problem, min, max)
     middle = (max - min) / 2 + min
     p, r = *get_operations(problem, middle)
 
-    if round(p) == round(r)
+    if p == r
       round(middle)
     elsif p < r
-      find_result(problem, middle, max)
+      solve_recursion(problem, middle, max)
     elsif p > r
-      find_result(problem, min, middle)
+      solve_recursion(problem, min, middle)
+    end
+  end
+
+  def solve_loop(problem, min, max)
+    while min <= max do
+      middle = (max - min) / 2 + min
+      p, r = *get_operations(problem, middle)
+
+      if p == r
+        return round middle
+      elsif p < r
+        min = middle
+      elsif p > r
+        max = middle
+      end
     end
   end
 
   def get_operations(problem, value)
-    apply(problem, value).split("=").map { |v| eval(v) }
+    apply(problem, value).split("=").map { |v| round eval(v) }
   end
 
   def round(n)
