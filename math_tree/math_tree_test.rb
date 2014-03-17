@@ -2,10 +2,11 @@ require_relative "./math_tree"
 require "minitest/autorun"
 
 describe MathTree do
-  it "solves 1 + ? = 2" do
+  it "solves some math problems" do
     MathTree.new(1, 1).solve("1 + ? = 2").must_equal 1
     MathTree.new(-1, 20).solve("1 + ? = 2").must_equal 1
     MathTree.new(-1, 3).solve("? / (1 + ?) = 0.5437").must_equal 1.1914
+    MathTree.new(-10 ** 9, 10 ** 9).solve("? / (1 + ?) = 0.53").must_equal 1.1278
   end
 
   describe "#apply" do
